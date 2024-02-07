@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Numeric Input Form</title>
+  <style>
+    .error-message {
+      color:red;
+      margin-top: 5px;
+      }
+      body{
+        background-color: rgb(238, 184, 84);
+        font-size: larger;
+        text-align: center;
+      }
+  </style>
+</head>
+<body>
+
+  <form>
+    <form id="numericForm" onsubmit="return validateInput()">
+    <label for="numericInput">Please enter a valid number:</label>
+    <input type="number" id="numericInput" name="numericInput" required>
+    <p id="errorMessage" class="error-message"></p>
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+  
+  <script>
+    const numericInput = document.getElementById('numericInput');
+    const errorMessage = document.getElementById('errorMessage');
+  
+    numericInput.addEventListener('input', validateInput);
+  
+    function validateInput() {
+      // get the numeric input value
+      var numericInput = document.getElementById("numericInput").value;
+
+      // check if the input is a number
+      const input = numericInput.value;
+  
+      if (isNaN(numericInput)) {
+        // Display error message
+        document.getElementById("errorMessage").innerHTML = "Please enter"
+        return false; // Prevent form submission
+      } else {
+        // Clear error message
+        document.getElementById("errorMessage").innerHTML = "";
+        return true; // Allow form submission
+      }
+    }
+  </script>
+  
+</body>
+</html>
+
+
+
+
+

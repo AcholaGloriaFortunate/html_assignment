@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return first and last name from onSubmit</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script>
+    function getFormValue() {
+        //Acess the form elements by their name attribute
+  var firstName = document.getElementById('form1').elements['fname'].value;
+  var lastName = document.getElementById('form1').elements['lname'].value;
+  //do something with the values,e.g:
+  alert("First name: " + firstName + ", Last name: " + lastName);
+  //Optionally prevent form submission afrer processing:
+  //return false;
+}
+    </script>
+</head>
+<body>
+
+    <form id="form1" onsubmit="getFormValue()">
+    First name: <input type="text" name="fname" value="David"><br>
+    Last name: <input type="text" name="lname" value="Beckham"><br>
+    <input type="submit" value="Submit">    
+    </form>
+    
+</body>
+</html>
